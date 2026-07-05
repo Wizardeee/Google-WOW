@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybershield</title>
+  <meta name="description" content="Cybershield" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Leaflet.js Maps APIs -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+  <div id="block-screen" style="position: fixed; inset: 0; background: #000; z-index: 9999; display: none; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: sans-serif; font-size: 24px; font-weight: 700;">
+    contact admin to get access
+  </div>
+
+  <!-- ======================================================= -->
+  <!--  PAGE: LANDING                                           -->
+  <!-- ======================================================= -->
+  <!-- ======================================================= -->
+  <!--  PAGE: LANDING                                           -->
+  <!-- ======================================================= -->
+  <div id="page-landing" class="page active landing-dark-theme">
+
+    <nav class="navbar-landing">
+      <div class="nav-inner-landing">
+        <div class="nav-brand-landing" id="nav-brand-landing-logo" style="cursor: pointer;">
+          <img src="logo.jpg" alt="Cybershield Logo" style="height: 36px; border-radius: 4px; border: 1px solid var(--purple); box-shadow: 0 0 10px rgba(139, 92, 246, 0.4); margin-right: 10px;" />
+          <span class="nav-title-landing">Cybershield</span>
+        </div>
+        <div class="nav-links-landing">
+          <a href="#page-landing" class="nav-link-landing" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Home</a>
+          <a href="#features" class="nav-link-landing">Features</a>
+          <a href="#pipelines" class="nav-link-landing">About</a>
+        </div>
+        <div class="nav-actions-landing">
+          <button class="btn btn-primary" id="btn-goto-login">Login to Portal</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Area -->
+    <header class="hero-landing">
+      <canvas id="globe-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: auto; cursor: grab;"></canvas>
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+      <div class="hero-content-landing reveal">
+        <h1 class="headline-landing">
+          Bharat fighting cybercrimes
+        </h1>
+        <p class="subheadline-landing">
+          An advanced intelligence portal for cybercells and financial investigators. Detect transaction anomalies,
+          trace money mule networks, and map illicit clusters in real-time.
+        </p>
+        <div class="cta-group-landing">
+          <button class="btn btn-primary btn-large" id="btn-hero-login">
+            Access Dashboard
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          <a href="#features" class="btn btn-outline-landing btn-large">Explore Intelligence Features</a>
+        </div>
+      </div>
+
+      <!-- Hero Visual (Interactive Dashboard Preview Pane) -->
+      <div class="hero-visual-landing reveal">
+        <div class="glass-panel-landing">
+          <div class="panel-header-landing">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="panel-title-landing">cfis_core_engine.py</span>
+          </div>
+          <div class="panel-body-landing">
+            <div class="terminal-grid-landing">
+              <div class="terminal-left">
+                <div class="code-line"><span class="c-keyword">import</span> xgboost <span class="c-keyword">as</span>
+                  xgb</div>
+                <div class="code-line"><span class="c-keyword">import</span> networkx <span class="c-keyword">as</span>
+                  nx</div>
+                <div class="code-line"><span class="c-comment"># Initializing fraud ring detector</span></div>
+                <div class="code-line">G = nx.DiGraph()</div>
+                <div class="code-line">G.add_edges_from(transaction_edges)</div>
+                <div class="code-line">centrality = nx.degree_centrality(G)</div>
+                <div class="code-line"><span class="c-keyword">print</span>(f<span class="c-string">"Detected
+                    {len(nx.weakly_connected_components(G))} potential fraud rings"</span>)</div>
+                <div class="code-line-success">>>> [SUCCESS] 200,000 Clusters Analyzed.</div>
+              </div>
+              <div class="terminal-right">
+                <div class="metric-mini-card">
+                  <div class="mm-label">XGBoost Accuracy</div>
+                  <div class="mm-value color-green">76.05%</div>
+                </div>
+                <div class="metric-mini-card">
+                  <div class="mm-label">Fraud Rings Found</div>
+                  <div class="mm-value color-purple">200,000</div>
+                </div>
+                <div class="metric-mini-card">
+                  <div class="mm-label">Analyzed Nodes</div>
+                  <div class="mm-value">400,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats strip -->
+    <section id="stats" class="section-stats-landing">
+      <div class="stats-grid-landing">
+        <div class="stat-card-landing reveal">
+          <div class="stat-val-landing">400k+</div>
+          <div class="stat-lbl-landing">Graph Vertices Scanned</div>
+        </div>
+        <div class="stat-card-landing reveal">
+          <div class="stat-val-landing">200k</div>
+          <div class="stat-lbl-landing">Connected Transaction Pairs</div>
+        </div>
+        <div class="stat-card-landing reveal">
+          <div class="stat-val-landing">&lt;20ms</div>
+          <div class="stat-lbl-landing">Real-Time Scoring Latency</div>
+        </div>
+        <div class="stat-card-landing reveal">
+          <div class="stat-val-landing">94.9%</div>
+          <div class="stat-lbl-landing">Baseline Accuracy Rate</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-features-landing">
+      <div class="container-landing reveal">
+        <h2 class="section-title-landing">Armed with Advanced Analytics</h2>
+        <p class="section-subtitle-landing">A full-suite fraud investigation toolkit designed for Indian law enforcement
+          agencies.</p>
+
+        <div class="features-grid-landing">
+          <div class="feature-card-landing reveal" onclick="openDomainPopup('xgboost')" style="cursor: pointer;">
+            <div class="feature-icon-landing">🤖</div>
+            <h3>XGBoost Predictive Scoring</h3>
+            <p>Runs sub-millisecond classification inference based on transaction parameters, location telemetry, and
+              historical device hashes.</p>
+          </div>
+          <div class="feature-card-landing reveal" onclick="openDomainPopup('networkx')" style="cursor: pointer;">
+            <div class="feature-icon-landing">🕸️</div>
+            <h3>NetworkX Mule Traversal</h3>
+            <p>Traces deep transactional flows using degree centrality and community grouping algorithms to identify
+              high-volume mule operations.</p>
+          </div>
+          <div class="feature-card-landing reveal" onclick="openDomainPopup('audit')" style="cursor: pointer;">
+            <div class="feature-icon-landing">🛡️</div>
+            <h3>Audit-Compliant Logs</h3>
+            <p>A cryptographically partitioned incident log dashboard, preventing internal case tampering and
+              maintaining legal integrity.</p>
+          </div>
+          <div class="feature-card-landing reveal" onclick="openDomainPopup('alerts')" style="cursor: pointer;">
+            <div class="feature-icon-landing">📈</div>
+            <h3>Real-Time Alert Feed</h3>
+            <p>Live stream of incoming banking anomaly reports categorized by target risk profiles and financial
+              thresholds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabbed Code/Visual section -->
+    <section id="pipelines" class="section-tabs-landing">
+      <div class="container-landing reveal">
+        <h2 class="section-title-landing">Built on Modern Open Standards</h2>
+        <p class="section-subtitle-landing">Clean code, robust models, and explainable intelligence reports.</p>
+
+        <div class="tab-wrapper-landing reveal">
+          <div class="tab-buttons-landing">
+            <button class="tab-btn-landing active" onclick="switchLandingTab(event, 'tab-xgb')">XGBoost
+              Evaluation</button>
+            <button class="tab-btn-landing" onclick="switchLandingTab(event, 'tab-graph')">NetworkX Graph
+              Engine</button>
+
+          </div>
+
+          <div id="tab-xgb" class="tab-content-landing active">
+            <pre><code>xgb_model = XGBClassifier(
+    n_estimators=300,
+    max_depth=6,
+    learning_rate=0.1,
+    scale_pos_weight=18.83,
+    eval_metric="logloss"
+)
+# Handled imbalanced dataset classes
+# Accuracy: 76.05% | F1 Score: 0.08</code></pre>
+          </div>
+
+          <div id="tab-graph" class="tab-content-landing">
+            <pre><code>def compute_degree_centrality(G):
+    # Calculate degree centrality for target ranking
+    centrality = nx.degree_centrality(G)
+    top_accounts = sorted(
+        centrality.items(), 
+        key=lambda x: x[1], 
+        reverse=True
+    )[:10]
+    return top_accounts</code></pre>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-landing">
+      <div class="footer-inner-landing">
+        <p>&copy; 2026 Cybershield.</p>
+        <div class="footer-links-landing">
+          <span>Department of Home Affairs</span>
+          <span>&middot;</span>
+          <span>Internal Use Only</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- ======================================================= -->
+  <!--  PAGE: LOGIN                                             -->
+  <!-- ======================================================= -->
+  <div id="page-login" class="page">
+    <div class="login-wrapper">
+      <div class="login-card">
+        <div class="login-logo" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 30 30" fill="none">
+            <rect width="30" height="30" rx="6" fill="#6d28d9" />
+            <path d="M15 5L8 9v6.5c0 4.5 3 8.5 7 9.8 4-1.3 7-5.3 7-9.8V9L15 5z" fill="white" opacity="0.95" />
+            <circle cx="15" cy="14.5" r="2.5" fill="#6d28d9" />
+          </svg>
+        </div>
+        <h1 class="login-title">Cybershield Portal Login</h1>
+        <p class="login-sub">An intelligent portal for cybercells and investigators</p>
+
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="login-username">Username</label>
+            <input type="text" id="login-username" class="form-input" placeholder="Username" autocomplete="username" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <input type="password" id="login-password" class="form-input" placeholder="Password"
+              autocomplete="current-password" />
+          </div>
+          <div id="login-error" style="color: #ff6b6b; font-size: 13px; margin: 10px 0; text-align: left; font-weight: 500; min-height: 18px;"></div>
+          <button type="submit" class="btn btn-primary btn-full" id="btn-login-submit">Login</button>
+        </form>
+
+        <button class="btn-text-plain" id="btn-back-landing">Back to Home</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================= -->
+  <!--  PAGE: DASHBOARD                                         -->
+  <!-- ======================================================= -->
+  <div id="page-dashboard" class="page">
+
+    <nav class="dash-navbar">
+      <div class="dash-nav-inner">
+        <!-- Left: Brand -->
+        <div class="nav-brand" id="nav-brand-dash-logo" style="cursor: pointer;">
+          <img src="logo.jpg" alt="Cybershield Logo" style="height: 28px; border-radius: 3px; border: 1px solid var(--purple); box-shadow: 0 0 8px rgba(139, 92, 246, 0.3); margin-right: 8px;" />
+          <span class="nav-title" id="dash-portal-title">Cybershield</span>
+        </div>
+
+        <!-- Right: Nav links (always visible, no dropdown) -->
+        <nav class="dash-nav-links" aria-label="Dashboard navigation">
+          <a class="dash-link active" id="nav-home" href="#section-home" onclick="scrollToSection(event, 'section-home')">Home</a>
+          <a class="dash-link" id="nav-complaints" href="#section-complaints" onclick="scrollToSection(event, 'section-complaints')">Complaints</a>
+          <a class="dash-link" id="nav-profile" href="#" onclick="openProfileModal(event)">Profile</a>
+        </nav>
+      </div>
+    </nav>
+
+    <main class="dash-main">
+
+      <!-- HOME SECTION -->
+      <section id="section-home" class="dash-section">
+        <div class="section-header">
+          <h2 class="section-title">Home</h2>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Complaints</div>
+            <div class="stat-number" id="stat-total-complaints">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">High Risk Cases</div>
+            <div class="stat-number" id="stat-high-risk-cases" style="color: #b91c1c;">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Active Alerts</div>
+            <div class="stat-number" id="stat-active-alerts">32</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Predicted Hotspots</div>
+            <div class="stat-number" id="stat-predicted-hotspots">8</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPLAINTS SECTION -->
+      <section id="section-complaints" class="dash-section">
+        <div class="section-header">
+          <h2 class="section-title">Complaints</h2>
+        </div>
+
+        <!-- Privacy Gate -->
+        <div id="complaints-gate" class="gate-wrapper">
+          <div class="gate-card">
+            <div class="gate-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </div>
+            <h3 class="gate-title">Protected Access</h3>
+            <p class="gate-desc">Enter your access password to view complaint records.</p>
+            <div class="form-group">
+              <label class="form-label" for="privacy-password">Password</label>
+              <input type="password" id="privacy-password" class="form-input" placeholder="Password" />
+            </div>
+            <div id="complaints-gate-error" style="color: #ff6b6b; font-size: 13px; margin: 10px 0; text-align: left; font-weight: 500; min-height: 18px;"></div>
+            <button class="btn btn-primary btn-full" id="btn-view-complaints">View Complaints</button>
+          </div>
+        </div>
+
+        <!-- Complaints List (shown only after password) -->
+        <div id="complaints-list" hidden>
+          <div class="complaint-cards-grid" id="complaint-cards-grid"></div>
+        </div>
+      </section>
+
+      <!-- PROFILE SECTION -->
+      <section id="section-profile" class="dash-section" style="display: none;">
+        <div class="section-header">
+          <h2 class="section-title">Profile</h2>
+        </div>
+        <div class="profile-wrapper" style="min-height: auto; padding: 20px 0; background: transparent;">
+          <div class="profile-card" style="margin: 0 auto;">
+            <div class="profile-avatar" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <div class="profile-row">
+              <span class="profile-label">Username</span>
+              <span class="profile-value" id="profile-username">officer</span>
+            </div>
+            <div class="profile-row profile-row-last">
+              <span class="profile-label">Role</span>
+              <span class="profile-value" id="profile-role">Police Officer</span>
+            </div>
+            <button class="btn btn-outline btn-full" id="btn-logout-police">Logout</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ======================================================= -->
+  <!--  PAGE: ADMIN DASHBOARD                                  -->
+  <!-- ======================================================= -->
+  <div id="page-admin-dashboard" class="page">
+
+    <nav class="dash-navbar">
+      <div class="dash-nav-inner">
+        <!-- Left: Brand -->
+        <div class="nav-brand" id="nav-brand-admin-logo" style="cursor: pointer;">
+          <img src="logo.jpg" alt="Cybershield Logo" style="height: 28px; border-radius: 3px; border: 1px solid var(--purple); box-shadow: 0 0 8px rgba(139, 92, 246, 0.3); margin-right: 8px;" />
+          <span class="nav-title" id="admin-portal-title">Cybershield Admin</span>
+        </div>
+
+        <!-- Right: Nav links -->
+        <nav class="dash-nav-links" aria-label="Admin Dashboard navigation">
+          <a class="dash-link active" id="admin-nav-home" href="#admin-section-home" onclick="scrollToSection(event, 'admin-section-home')">Home</a>
+          <a class="dash-link" id="admin-nav-accounts" href="#admin-section-accounts" onclick="scrollToSection(event, 'admin-section-accounts')">Police Accounts</a>
+          <a class="dash-link" id="admin-nav-complaints" href="#admin-section-complaints" onclick="scrollToSection(event, 'admin-section-complaints')">Complaints</a>
+          <a class="dash-link" id="admin-nav-profile" href="#" onclick="openProfileModal(event)">Profile</a>
+        </nav>
+      </div>
+    </nav>
+
+    <main class="dash-main">
+
+      <!-- HOME SECTION -->
+      <section id="admin-section-home" class="dash-section">
+        <div class="section-header">
+          <h2 class="section-title">Home</h2>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Police Accounts</div>
+            <div class="stat-number" id="admin-stat-total-accounts">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Active Accounts</div>
+            <div class="stat-number" id="admin-stat-active-accounts" style="color: #10b981;">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Frozen Accounts</div>
+            <div class="stat-number" id="admin-stat-frozen-accounts" style="color: #ef4444;">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Complaints</div>
+            <div class="stat-number" id="admin-stat-total-complaints">0</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- POLICE ACCOUNTS SECTION -->
+      <section id="admin-section-accounts" class="dash-section">
+        <div class="section-header">
+          <h2 class="section-title">Police Officer Accounts</h2>
+        </div>
+        
+        <!-- Table / Card List wrapper -->
+        <div id="admin-accounts-list-container" style="margin-bottom: 30px;">
+          <!-- Rendered dynamically from app.js -->
+        </div>
+
+        <!-- Create Account Form -->
+        <div class="create-account-card">
+          <h3 style="font-size: 16px; margin-bottom: 20px; font-weight: 700; color: var(--purple);">Create Police Officer Account</h3>
+          <form id="create-account-form" novalidate>
+            <div class="create-account-grid">
+              <div class="form-group">
+                <label class="form-label" for="create-name">Officer Name</label>
+                <input type="text" id="create-name" class="form-input" placeholder="Officer Name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="create-id">Officer ID</label>
+                <input type="text" id="create-id" class="form-input" placeholder="Officer ID" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="create-username">Username</label>
+                <input type="text" id="create-username" class="form-input" placeholder="Username" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="create-password">Temporary Password</label>
+                <input type="password" id="create-password" class="form-input" placeholder="Temporary Password" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="create-station">Police Station</label>
+                <input type="text" id="create-station" class="form-input" placeholder="Police Station" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="create-district">District</label>
+                <input type="text" id="create-district" class="form-input" placeholder="District" required />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="btn-create-account">Create Account</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- COMPLAINTS SECTION -->
+      <section id="admin-section-complaints" class="dash-section">
+        <div class="section-header">
+          <h2 class="section-title">Complaints</h2>
+        </div>
+
+        <!-- Privacy Gate -->
+        <div id="admin-complaints-gate" class="gate-wrapper">
+          <div class="gate-card">
+            <div class="gate-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </div>
+            <h3 class="gate-title">Protected Access</h3>
+            <p class="gate-desc">Enter your access password to view complaint records.</p>
+            <div class="form-group">
+              <label class="form-label" for="admin-privacy-password">Password</label>
+              <input type="password" id="admin-privacy-password" class="form-input" placeholder="Password" />
+            </div>
+            <div id="admin-complaints-gate-error" style="color: #ff6b6b; font-size: 13px; margin: 10px 0; text-align: left; font-weight: 500; min-height: 18px;"></div>
+            <button class="btn btn-primary btn-full" id="btn-admin-view-complaints">View Complaints</button>
+          </div>
+        </div>
+
+        <!-- Complaints List (shown only after password) -->
+        <div id="admin-complaints-list" hidden>
+          <div class="complaint-cards-grid" id="admin-complaint-cards-grid"></div>
+        </div>
+      </section>
+
+      <!-- PROFILE SECTION -->
+      <section id="admin-section-profile" class="dash-section" style="display: none;">
+        <div class="section-header">
+          <h2 class="section-title">Profile</h2>
+        </div>
+        <div class="profile-wrapper" style="min-height: auto; padding: 20px 0; background: transparent;">
+          <div class="profile-card" style="margin: 0 auto;">
+            <div class="profile-avatar" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <div class="profile-row">
+              <span class="profile-label">Username</span>
+              <span class="profile-value" id="admin-profile-username">admin</span>
+            </div>
+            <div class="profile-row profile-row-last">
+              <span class="profile-label">Role</span>
+              <span class="profile-value" id="admin-profile-role">System Administrator</span>
+            </div>
+            <button class="btn btn-outline btn-full" id="btn-logout-admin">Logout</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+
+  <!-- ======================================================= -->
+  <!--  MODAL: COMPLAINT DETAIL                                 -->
+  <!-- ======================================================= -->
+  <div id="complaint-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-container">
+
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="modal-title">Complaint Details</h2>
+          <span class="modal-id" id="modal-complaint-id"></span>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Left Side -->
+        <div class="modal-left">
+
+          <div class="detail-section">
+            <div class="detail-section-title">Complaint Details</div>
+            <div class="detail-row"><span class="dr-label">Complaint ID</span><span class="dr-val" id="d-id"></span>
+            </div>
+            <div class="detail-row"><span class="dr-label">Date &amp; Time</span><span class="dr-val"
+                id="d-datetime"></span></div>
+            <div class="detail-row"><span class="dr-label">District</span><span class="dr-val" id="d-district"></span>
+            </div>
+            <div class="detail-row"><span class="dr-label">State</span><span class="dr-val" id="d-state"></span></div>
+            <div class="detail-row"><span class="dr-label">Fraud Type</span><span class="dr-val"
+                id="d-fraud-type"></span></div>
+            <div class="detail-row detail-row-last"><span class="dr-label">Risk Level</span><span class="dr-val"><span
+                  class="risk-badge" id="d-risk-level"></span></span></div>
+          </div>
+
+          <div class="detail-section">
+            <div class="detail-section-title">Victim Information</div>
+            <div class="detail-placeholder">Placeholder — victim data will appear here</div>
+          </div>
+
+          <div class="detail-section">
+            <div class="detail-section-title">Transaction Summary</div>
+            <div class="detail-placeholder">Placeholder — transaction data will appear here</div>
+          </div>
+
+          <div class="detail-section">
+            <div class="detail-section-title">Risk Prediction</div>
+            <div class="detail-placeholder">Placeholder — XGBoost / Random Forest scores will appear here</div>
+          </div>
+
+          <div class="detail-section">
+            <div class="detail-section-title">Suspected Mule Accounts</div>
+            <div class="detail-placeholder">Placeholder — NetworkX mule account graph will appear here</div>
+          </div>
+
+        </div>
+
+        <!-- Right Side: India Map Placeholder -->
+        <div class="modal-right">
+          <div class="map-section-title">Complaint Location</div>
+          <div class="map-placeholder" id="map-placeholder">
+            <!-- Interactive zoomable Leaflet map overlay -->
+            <div id="leaflet-map" style="position: absolute; inset: 0; z-index: 2; border-radius: var(--radius-md);"></div>
+
+            <!-- India map SVG outline -->
+            <div class="map-india-outline" aria-hidden="true">
+              <svg viewBox="0 0 500 560" fill="none" xmlns="http://www.w3.org/2000/svg" class="india-svg">
+                <path d="M215 30 L230 25 L260 35 L285 28 L310 40 L330 55 L345 70 L360 90
+                         L365 115 L370 140 L380 155 L390 170 L385 195 L395 215
+                         L400 235 L395 260 L385 285 L370 305 L360 325 L345 345
+                         L330 360 L315 375 L300 395 L285 415 L270 435 L258 455
+                         L248 475 L242 490 L238 505 L235 490 L228 472 L220 455
+                         L210 438 L198 418 L185 400 L170 382 L155 365 L140 345
+                         L128 325 L118 305 L108 285 L100 265 L95 245 L92 225
+                         L90 205 L95 185 L100 165 L108 148 L118 132 L128 115
+                         L140 100 L155 85 L170 70 L185 58 L200 45 Z" fill="#21262d" stroke="#8b5cf6" stroke-width="2"
+                  opacity="0.6" />
+                <!-- J&K top region -->
+                <path d="M215 30 L200 20 L185 15 L170 20 L155 30 L145 45 L140 60 L155 55 L170 50 L185 45 L200 40 Z"
+                  fill="#30363d" stroke="#8b5cf6" stroke-width="1.5" opacity="0.5" />
+                <!-- Northeast -->
+                <path d="M365 115 L380 105 L400 100 L415 110 L425 130 L420 150 L405 160 L390 155 L380 140 Z"
+                  fill="#30363d" stroke="#8b5cf6" stroke-width="1.5" opacity="0.5" />
+              </svg>
+            </div>
+
+            <!-- Hotspot marker (centered on India) -->
+            <div class="map-marker-wrap" id="map-marker-wrap">
+              <div class="map-marker-pulse"></div>
+              <div class="map-marker-pin" aria-label="Complaint location">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#6d28d9" stroke="white" stroke-width="1">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" fill="white" />
+                </svg>
+              </div>
+              <div class="map-marker-label" id="map-marker-label"></div>
+            </div>
+
+            <!-- Info box -->
+            <div class="map-info-box">
+              <div class="map-info-row"><span class="map-info-label">District</span><span class="map-info-val"
+                  id="map-district"></span></div>
+              <div class="map-info-row"><span class="map-info-label">State</span><span class="map-info-val"
+                  id="map-state"></span></div>
+              <div class="map-info-row"><span class="map-info-label">Risk</span><span class="map-info-val map-risk"
+                  id="map-risk"></span></div>
+            </div>
+
+            <div class="map-note">Reserved for Leaflet.js / GIS integration</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Popup Modal -->
+  <div id="profile-modal" class="modal-overlay" hidden style="z-index: 9999;">
+    <div class="modal-card" style="border: 1px solid var(--neon-blue); box-shadow: 0 0 35px var(--neon-blue-glow); background: rgba(10, 17, 34, 0.98); max-width: 380px;">
+      <div class="modal-header" style="border-bottom: 1px solid rgba(0, 243, 255, 0.15); padding-bottom: 12px;">
+        <h3 class="modal-title" style="color: var(--neon-blue);">User Profile</h3>
+        <button class="modal-close" id="btn-profile-modal-close" aria-label="Close" style="color: var(--text-secondary); background: transparent; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 20px;">
+        <div class="profile-modal-inner" style="width: 100%;">
+          <div class="profile-avatar" aria-hidden="true" style="margin: 0 auto 15px auto;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--neon-blue); display: block; margin: 0 auto;">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <div class="profile-row" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border);">
+            <span class="profile-label" style="color: var(--text-muted);">Username</span>
+            <span class="profile-value" id="modal-profile-username" style="color: #fff; font-weight: 600;">officer</span>
+          </div>
+          <div class="profile-row profile-row-last" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: none; margin-bottom: 20px;">
+            <span class="profile-label" style="color: var(--text-muted);">Role</span>
+            <span class="profile-value" id="modal-profile-role" style="color: var(--neon-blue); font-weight: 600;">Police Officer</span>
+          </div>
+          <button class="btn btn-outline btn-full" id="btn-modal-logout" style="width: 100%;">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script type="module" src="globe.js"></script>
+
+  <!-- Brand Info Modal -->
+  <div id="brand-info-modal" class="modal-overlay" hidden style="z-index: 9999;">
+    <div class="modal-card" style="border: 1px solid var(--neon-blue); box-shadow: 0 0 35px var(--neon-blue-glow); background: rgba(10, 17, 34, 0.98);">
+      <div class="modal-header" style="border-bottom: 1px solid rgba(0, 243, 255, 0.15); padding-bottom: 12px;">
+        <h3 class="modal-title" style="color: var(--neon-blue);">Cybershield Platform Info</h3>
+        <button class="modal-close" id="btn-brand-modal-close" aria-label="Close" style="color: var(--text-secondary); background: transparent; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center; padding: 25px 20px;">
+        <img src="logo.jpg" alt="Cybershield Logo" style="width: 140px; height: 140px; border-radius: var(--radius-md); border: 2px solid var(--neon-blue); box-shadow: 0 0 20px var(--neon-blue-glow); margin-bottom: 20px;" />
+        <h2 style="color: #fff; font-size: 22px; margin-bottom: 6px; font-family: Inter, sans-serif; font-weight: 800;">CYBERSHIELD</h2>
+        <p style="color: var(--neon-blue); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 15px;">Predict &bull; Prevent &bull; Protect</p>
+        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+          AI-Powered Cybercrime Prediction & Proactive Intervention Platform.<br>
+          Connected to state-level geographic location feeds, machine learning transaction filters, and automated police alert loops.
+        </p>
+        <div style="background: rgba(0, 243, 255, 0.05); border: 1px solid rgba(0, 243, 255, 0.15); border-radius: var(--radius); padding: 12px; font-size: 12px; color: #fff; line-height: 1.4;">
+          <strong>Neon Blue Background Shift!</strong><br/>
+          <span style="color: var(--text-secondary);">The environment theme has been switched to active Neon Blue mode. Click the logo again to toggle.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Domain Info Modal -->
+  <div id="domain-info-modal" class="modal-overlay" hidden style="z-index: 9999;">
+    <div class="modal-card" style="border: 1px solid var(--neon-blue); box-shadow: 0 0 35px var(--neon-blue-glow); background: rgba(10, 17, 34, 0.98);">
+      <div class="modal-header" style="border-bottom: 1px solid rgba(0, 243, 255, 0.15); padding-bottom: 12px;">
+        <h3 class="modal-title" id="domain-modal-title" style="color: var(--neon-blue);">Domain Details</h3>
+        <button class="modal-close" id="btn-domain-modal-close" aria-label="Close" style="color: var(--text-secondary); background: transparent; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 20px; line-height: 1.6; color: var(--text-secondary); font-size: 13px;" id="domain-modal-body">
+        <!-- Content populated dynamically -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
